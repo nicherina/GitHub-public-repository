@@ -19,7 +19,8 @@ st.set_page_config(
 # ── Load Data ─────────────────────────────────────────────────────────────────
 @st.cache_data
 def load_data():
-    df = pd.read_csv("outputs/germany_stations_clustered.csv")
+    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    df = pd.read_csv(os.path.join(base, "outputs", "germany_stations_clustered.csv"))
     return df
 
 df = load_data()
