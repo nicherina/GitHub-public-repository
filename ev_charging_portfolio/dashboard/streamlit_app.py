@@ -5,6 +5,7 @@ EV Charging Infrastructure Dashboard
 Author: Nisrina Afnan Walyadin
 """
 
+import os
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -17,10 +18,12 @@ st.set_page_config(
 )
 
 # ── Load Data ─────────────────────────────────────────────────────────────────
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_PATH = os.path.join(BASE_DIR, "outputs", "germany_stations_clustered.csv")
+
 @st.cache_data
 def load_data():
-    base = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    df = pd.read_csv(os.path.join(base, "outputs", "germany_stations_clustered.csv"))
+    df = pd.read_csv(DATA_PATH)
     return df
 
 df = load_data()
