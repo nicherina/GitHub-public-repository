@@ -153,6 +153,18 @@ with col_bar:
     fig_bar.update_traces(textposition="outside")
     st.plotly_chart(fig_bar, use_container_width=True)
 
+# ── Folium Map ────────────────────────────────────────────────────────────────
+st.divider()
+st.subheader("Interactive Geospatial Map")
+
+folium_path = os.path.join(BASE_DIR, "outputs", "ev_charging_map.html")
+if os.path.exists(folium_path):
+    with open(folium_path, "r", encoding="utf-8") as f:
+        html_content = f.read()
+    st.components.v1.html(html_content, height=500, scrolling=True)
+else:
+    st.info("Folium map not found. Run `python dashboard/folium_map.py` to generate it.")
+
 # ── Raw Data Table ────────────────────────────────────────────────────────────
 with st.expander("View Raw Data"):
     st.dataframe(
