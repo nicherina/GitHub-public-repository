@@ -1,7 +1,10 @@
 # ⚡ EV Charging Infrastructure Analysis — Germany & Europe
 
 > **Portfolio Project** | Nisrina Afnan Walyadin  
-> Skills demonstrated: Python · SQL · K-Means Clustering · Geospatial Analytics · Power BI · Data Pipeline Design
+> Skills demonstrated: Python · SQL · K-Means Clustering · Geospatial Analytics · Streamlit · Data Pipeline Design
+
+[![Live Dashboard](https://img.shields.io/badge/Live%20Dashboard-Streamlit-FF4B4B?logo=streamlit)](https://app-public-repository-kequcvp652q4ujqyx4ucc2.streamlit.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?logo=github)](https://github.com/nicherina/GitHub-public-repository)
 
 ---
 
@@ -86,9 +89,14 @@ python dashboard/folium_map.py
 ```
 *Opens in any browser. Includes heatmap, clustered markers, and desert zones.*
 
-### 5. Power BI Dashboard
-Load `outputs/germany_stations_clustered.csv` into Power BI and build:
-- 🗺️ Map visual using `lat` / `lon` fields
+### 5. Streamlit Dashboard (Live)
+```bash
+streamlit run dashboard/streamlit_app.py
+```
+Or view the live version: [https://app-public-repository-kequcvp652q4ujqyx4ucc2.streamlit.app/](https://app-public-repository-kequcvp652q4ujqyx4ucc2.streamlit.app/)
+
+Features:
+- 🗺️ Interactive map using `lat` / `lon` fields
 - 🔢 KPI cards: total stations, % ultra-fast, desert zones
 - 🎛️ Slicers: `speed_category`, `cluster`, `is_desert`, `year_created`
 - 📈 Line chart: station growth over time (`year_created`)
@@ -126,7 +134,7 @@ Clusters where ultra-fast (≥100 kW) penetration falls below 5% are flagged as 
 | Scikit-learn | K-Means clustering |
 | Matplotlib / Seaborn | Static visualisations |
 | Folium | Interactive geospatial map |
-| Power BI | Business intelligence dashboard |
+| Streamlit | Interactive web dashboard |
 | Open Charge Map API | Data source |
 
 ---
