@@ -45,7 +45,7 @@ SPEED_ICONS = {
 m = folium.Map(
     location=[51.1657, 10.4515],  # Centre of Germany
     zoom_start=6,
-    tiles="CartoDB positron"
+    tiles="OpenStreetMap"
 )
 
 # Layer 1: Heatmap (all stations)
